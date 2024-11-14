@@ -278,7 +278,27 @@ nav ul li a:hover {
   color: #ffffff;
   opacity: 0.85;
 }
+/* Social Links Styling */
+.social-links {
+  display: flex;
+  justify-content: flex-start;
+  gap: 15px;
+}
 
+.social-icon {
+  font-size: 24px;
+  color: #333;
+  transition: color 0.3s ease;
+}
+
+.social-icon:hover {
+  color: #0073b1; /* LinkedIn blue on hover */
+}
+
+/* GitHub icon hover color */
+.social-icon:nth-child(2):hover {
+  color: #333; /* GitHub dark color */
+}
 /* Work Section */
 
 #work h2 {
