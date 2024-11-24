@@ -1,0 +1,770 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
+
+/* Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Poppins", Arial, sans-serif;
+  color: #333;
+  background-color: #f9faff;
+  line-height: 1.6;
+}
+
+/* Header */
+header {
+  background-color: #ffffff;
+  padding: 1rem 0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+header .container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  width: 100px; /* Adjust width as necessary */
+  height: auto;
+  border-radius: 0%; /* Maintain aspect ratio */
+}
+
+nav {
+  display: flex;
+  align-items: center; /* Center items vertically */
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+nav ul li {
+  position: relative; /* For absolute positioning of dropdowns if needed */
+}
+
+nav ul li a {
+  color: #333;
+  text-decoration: none;
+  font-size: 1.2rem;
+  padding: 0.5rem;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+nav ul li a:hover {
+  color: #5a52d1;
+  transform: translateY(-3px);
+}
+
+.contact-btnhire {
+  text-decoration-line: none;
+  padding: 0.5rem 1.5rem;
+  background-color: #5a52d1;
+  color: #ffffff;
+  border: none;
+  border-radius: 25px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-btnhire:hover {
+  background-color: #6d5dfc;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.download-btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #7156e0;
+  color: #ffffff;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  margin-left: 10px;
+  transition: background-color 0.3s ease-in-out;
+}
+.download-btn:hover {
+  color: white;
+  transform: translateY(-3px);
+}
+/* Navbar Toggle (Burger Icon) */
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 25px;
+  cursor: pointer;
+}
+
+.nav-toggle div {
+  height: 3px;
+  background-color: #fff;
+  transition: all 0.3s ease;
+}
+
+.nav-toggle.active div:nth-child(1) {
+  transform: rotate(45deg);
+  position: relative;
+  top: 7px;
+}
+
+.nav-toggle.active div:nth-child(2) {
+  opacity: 0;
+}
+
+.nav-toggle.active div:nth-child(3) {
+  transform: rotate(-45deg);
+  position: relative;
+  top: -7px;
+}
+
+/* Responsive Navbar */
+@media (max-width: 768px) {
+  /* Style the navbar list to stack items vertically on small screens */
+  nav ul {
+    flex-direction: column; /* Stack items vertically */
+    position: absolute; /* Position absolute for dropdown */
+    background-color: #ffffff; /* Match header color */
+    top: 60px; /* Position below header */
+    right: 0; /* Align to right */
+    width: 100%; /* Full width */
+    display: none; /* Hidden by default */
+    padding: 1rem 0; /* Space out items */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Show the navbar list when the nav-toggle class is active */
+  nav.active ul {
+    display: flex; /* Show on active */
+  }
+
+  /* Style for the burger icon (menu button) */
+  .nav-toggle {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    z-index: 11; /* Above other elements to ensure it's clickable */
+  }
+
+  /* Style each line of the burger icon */
+  .nav-toggle div {
+    height: 3px;
+    width: 25px;
+    background-color: #5a52d1; /* Change color to match theme */
+    margin: 4px;
+    transition: all 0.3s ease; /* Smooth transition on click */
+  }
+
+  /* Optional: Style changes for active state (when the menu is open) */
+  nav.active .nav-toggle div:nth-child(1) {
+    transform: translateY(7px) rotate(45deg); /* First line: Move down and rotate */
+  }
+
+  nav.active .nav-toggle div:nth-child(2) {
+    opacity: 0; /* Hide the middle line */
+  }
+
+  nav.active .nav-toggle div:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg); /* Third line: Move up and rotate */
+  }
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.8s ease-out forwards;
+}
+
+/* Apply fade-in to sections */
+#hero,
+#work,
+#services {
+  animation-delay: 0.2s;
+}
+
+/* Define the keyframes */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Set initial styles for the animated elements */
+.animate-on-scroll {
+  opacity: 0; /* Hidden initially */
+  transform: translateY(20px); /* Slightly shifted down */
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+/* Add the fade-in effect */
+.animate-on-scroll.fadeInUp {
+  opacity: 1;
+  transform: translateY(0);
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+/* Hero Section */
+#hero {
+  text-align: center;
+  padding: 7rem 1rem;
+  background: linear-gradient(135deg, #6d5dfc, #a5b4fc);
+  color: #ffffff;
+  animation: fadeIn 1.5s ease;
+  margin-bottom: 0;
+}
+
+#hero h1 {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #ffffff;
+}
+
+#hero p {
+  font-size: 1.2rem;
+  max-width: 700px;
+  margin: 0 auto;
+  color: #f3f3fc;
+  line-height: 1.8;
+}
+
+.contact-btn {
+  padding: 0.8rem 2rem;
+  background-color: #ffffff;
+  color: #5a52d1;
+  border: none;
+  border-radius: 25px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+  font-size: 1rem;
+}
+
+.contact-btn:hover {
+  background-color: #e0e0e0;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.hero-icon {
+  font-size: 4rem; /* Increased size for visibility */
+  margin-top: 2rem;
+  color: #ffffff;
+  opacity: 0.85;
+}
+/* Social Links Styling */
+.social-links {
+  display: flex;
+  justify-content: flex-start;
+  gap: 15px;
+}
+
+.social-icon {
+  font-size: 24px;
+  color: #333;
+  transition: color 0.3s ease;
+}
+
+.social-icon:hover {
+  color: #0073b1; /* LinkedIn blue on hover */
+}
+
+/* GitHub icon hover color */
+.social-icon:nth-child(2):hover {
+  color: #333; /* GitHub dark color */
+}
+/* Work Section */
+
+#work h2 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: #5a52d1;
+}
+#work p {
+  margin-bottom: 1rem;
+}
+.work-grid {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.work-item,
+.service-item {
+  position: relative; /* Ensures child elements are positioned relative to these containers */
+  overflow: hidden;
+}
+/* Work Section Styling */
+/* Work Section */
+#work {
+  width: 100%;
+  padding: 4rem 2rem;
+  text-align: center;
+  background-color: #f9f9f9; /* Light background for contrast */
+}
+
+#work h2 {
+  font-size: 2.5rem;
+  margin-bottom: 2.5rem;
+  color: #2c3e50;
+  font-weight: 600;
+}
+
+/* Project Container */
+.project-item {
+  width: 100%;
+  max-width: 1200px;
+  margin: 2rem auto; /* Increased spacing between items */
+  border-radius: 10px;
+  overflow: hidden;
+  background-color: #ffffff; /* White background for each project */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); /* Subtle shadow effect */
+  transition: transform 0.3s, box-shadow 0.3s; /* Animation for hover */
+}
+
+.project-item:hover {
+  transform: translateY(-7px); /* Lift effect */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15); /* Slightly deeper shadow */
+}
+
+/* Project Image */
+.project-image-full {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-bottom: 3px solid #6d5dfc; /* Blue bottom border */
+}
+
+.project-video-full {
+  display: none;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-bottom: 3px solid #6d5dfc;
+  position: relative;
+}
+.videoclose-btn {
+  position: absolute;
+  top: 10px; /* Adjust this value to control vertical positioning */
+  right: 10px; /* Adjust this value to control horizontal positioning */
+  font-size: 30px;
+  color: #fff;
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.712); /* Semi-transparent background */
+  border-radius: 50%;
+  padding: 10px 10px;
+  z-index: 10; /* Make sure it's above the video */
+}
+/* Project Description */
+.project-description {
+  padding: 2rem 1.5rem;
+  text-align: left;
+}
+
+.project-description h3 {
+  font-size: 1.8rem;
+  margin-bottom: 0.75rem;
+  color: #6d5dfc; /* Blue title color */
+  font-weight: 600;
+}
+
+.project-description p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: #555;
+  margin-bottom: 1.5rem;
+}
+
+/* Project Tags */
+.project-tags {
+  display: block;
+  margin-bottom: 1.5rem;
+  font-size: 0.9rem;
+  color: #888;
+}
+
+.videoclose-btn:hover,
+.videoclose-btn:focus {
+  color: #000;
+}
+
+/* Video Styling */
+video {
+  width: 100%;
+  max-height: 60vh; /* Prevent the video from being too tall */
+  object-fit: contain; /* Ensure the video fits inside the modal without stretching */
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+  .close-btn {
+    font-size: 28px;
+    right: 10px;
+  }
+}
+/* Visit Button */
+.visit-btn,
+.demo-btn {
+  padding: 0.6rem 1.8rem;
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #fff;
+  background-color: #6d5dfc;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, box-shadow 0.3s;
+  box-shadow: 0 4px 12px rgba(108, 52, 219, 0.3); /* Button shadow */
+}
+
+.visit-btn:hover,
+.demo-btn:hover {
+  background-color: #675bc0;
+}
+
+/* Button styling */
+.purchase-btn {
+  background-color: #5a52d1;
+  color: #ffffff;
+  padding: 0.8rem 1.5rem;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  text-align: center;
+  transition: background-color 0.3s ease;
+  position: absolute;
+  bottom: 1rem; /* Stick to the bottom within each item */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 85%;
+  max-width: 220px;
+}
+
+.purchase-btn:hover {
+  background-color: #6d5dfc;
+}
+
+/* Contact Section */
+#contact {
+  padding: 4rem 1rem;
+  text-align: center;
+  background-color: #f9f9f9;
+}
+
+#contact h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #5a52d1;
+}
+
+#contact p {
+  font-size: 1.1rem;
+  color: #666;
+  margin-bottom: 2rem; /* Spacing between intro and form */
+}
+
+/* Contact Container */
+.contact-container {
+  display: flex; /* Use flexbox for side-by-side layout */
+  align-items: flex-start; /* Align items at the top */
+  justify-content: center; /* Center align horizontally */
+  margin: 2rem 0; /* Margin around the contact container */
+}
+
+/* Contact Icon Styles */
+.contact-icon {
+  margin-right: 2rem; /* Space between the icon and form */
+}
+
+/* Contact Form Styles */
+.contact-form {
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  width: 100%; /* Make sure it takes available width */
+}
+
+.contact-form h2 {
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.contact-form label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+  color: #444; /* Darker label color */
+}
+
+.contact-form input,
+.contact-form textarea,
+.contact-form select {
+  width: 100%;
+  padding: 0.8rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  transition: border-color 0.3s; /* Transition for focus effect */
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus,
+.contact-form select:focus {
+  border-color: #5a52d1; /* Highlight border color on focus */
+  outline: none; /* Remove outline */
+}
+
+.contact-form button {
+  background-color: #5a52d1;
+  color: #ffffff;
+  border: none;
+  padding: 0.8rem 2rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-size: 1rem; /* Increased button text size */
+}
+
+.contact-form button:hover {
+  background-color: #6d5dfc; /* Darker button color on hover */
+}
+
+/* Additional Styles */
+#contact p {
+  margin-top: 1rem; /* Space above contact details */
+}
+
+#contact a {
+  color: #5a52d1; /* Link color */
+  text-decoration: none; /* Remove underline */
+}
+/* Alert Box */
+/* Alert Box */
+.alert {
+  background-color: #2ecc71;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 16px;
+  margin-bottom: 15px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+#contact a:hover {
+  text-decoration: underline; /* Underline on hover */
+}
+.contact-form input.error,
+.contact-form select.error,
+.contact-form textarea.error {
+  border: 2px solid #e74c3c;
+}
+/* Error Message Style */
+.error-message {
+  color: #e74c3c;
+  font-size: 14px;
+  margin-top: 4px;
+}
+/* Scroll to Top Button */
+.scroll-to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background-color: #5a52d1;
+  color: #ffffff;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  z-index: 1000; /* Ensure it's above other content */
+}
+
+.scroll-to-top:hover {
+  background-color: #6d5dfc;
+  transform: translateY(-3px);
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  background-color: #5a52d1;
+  color: #ffffff;
+  position: relative; /* Allows for footer to stay at bottom if content is short */
+  margin-top: auto;
+}
+
+/* Responsive Design Enhancements */
+@media (max-width: 768px) {
+  #hero {
+    padding-top: 0;
+    padding-bottom: 20px;
+  }
+
+  .contact-btn,
+  .cv-btn {
+    font-size: 1.2rem; /* Adjust button sizes */
+    padding: 0.4rem 1rem; /* Reduce padding */
+  }
+
+  .scroll-to-top {
+    width: 40px;
+    height: 40px;
+    font-size: 1.2rem; /* Adjust icon size */
+  }
+}
+
+.about {
+  display: flex;
+  align-items: center;
+
+  background-color: #f9f9f9;
+  padding: 0px 20px;
+  flex-wrap: nowrap; /* Prevents wrapping on larger screens */
+}
+
+.about-content {
+  flex: 1; /* Takes up remaining space */
+  max-width: 50%; /* Adjusts to half the width on large screens */
+  padding: 20px;
+  padding-left: 20%;
+}
+
+.team-member {
+  flex: 1; /* Also takes up remaining space */
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 600px; /* Matches the .about-content width */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.team-image {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+  .about {
+    flex-direction: column;
+    flex-wrap: wrap; /* Allows wrapping on smaller screens */
+  }
+  .about-content,
+  .team-member {
+    max-width: 100%; /* Full width on smaller screens */
+  }
+}
+
+/* FAQ Section */
+.faq {
+  background-color: #f9f9f9; /* Light background */
+  padding: 60px 20px;
+}
+
+.faq h2 {
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 2.5rem; /* Increased font size for emphasis */
+  color: #333; /* Darker color for headings */
+}
+
+.faq-item {
+  margin-bottom: 20px;
+  border-radius: 8px; /* Rounded corners for items */
+  overflow: hidden; /* Ensure corners stay rounded */
+  background-color: #ffffff; /* White background for items */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  transition: transform 0.3s; /* Animation for hover */
+}
+
+.faq-item:hover {
+  transform: translateY(-5px); /* Lift effect on hover */
+}
+
+.faq-question {
+  font-size: 1.25rem;
+  cursor: pointer;
+  position: relative;
+  padding: 15px; /* Padding for touch area */
+  color: #6d5dfc; /* Blue color for questions */
+  background-color: #e7ecff; /* Light blue background for questions */
+  transition: background-color 0.3s; /* Transition for background */
+}
+
+.faq-question:hover {
+  background-color: #d1d3ff; /* Darker blue on hover */
+}
+
+.faq-answer {
+  font-size: 1.1rem;
+  display: none; /* Hide by default */
+  color: #555; /* Gray color for answers */
+  line-height: 1.6;
+  padding: 10px 15px; /* Padding for answers */
+  animation: fadeIn 0.5s ease; /* Animation for showing answers */
+}
+
+/* Toggle FAQ item with JavaScript */
+.faq-item.active .faq-answer {
+  display: block; /* Show answer when active */
+}
+
+.faq-item.active .faq-question {
+  color: #2400b3; /* Change question color when active */
+}
+
+.faq-icon {
+  font-size: 1.5rem; /* Icon size */
+  margin-right: 10px; /* Space between icon and text */
+  display: inline-block; /* Align icon with text */
+}
+
+/* Animation keyframes */
+@keyframes fadeIn {
+  from {
+    opacity: 0; /* Start fully transparent */
+  }
+  to {
+    opacity: 1; /* End fully visible */
+  }
+}

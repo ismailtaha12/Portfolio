@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ismail's Portfolio</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Header -->
+    <header>
+      <div class="container">
+        <h1>Ismail Taha</h1>
+        <nav>
+          <div class="nav-toggle">
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+          <ul>
+            <li>
+              <a href="#hero"><i class="fas fa-user icon"></i> About</a>
+            </li>
+            <li>
+              <a href="#work"><i class="fas fa-briefcase icon"></i> Projects</a>
+            </li>
+
+            <li>
+              <a href="#contact"
+                ><i class="fas fa-envelope icon"></i> Contact</a
+              >
+            </li>
+            <li>
+              <a
+                href="images/Ismail_CV_Egy.pdf"
+                download="Ismail_Taha_CV.pdf"
+                class="download-btn"
+                ><i class="fas fa-download icon"></i> Download CV</a
+              >
+            </li>
+          </ul>
+        </nav>
+         <!-- Social Media Links -->
+         <div class="social-links">
+          <a href="https://www.linkedin.com/in/ismail-taha1/" target="_blank" class="social-icon">
+            <i class="fab fa-linkedin"></i>
+          </a>
+          <a href="https://github.com/ismailtaha12" target="_blank" class="social-icon">
+            <i class="fab fa-github"></i>
+          </a>
+        </div>
+      </div>
+      
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero" class="fade-in">
+      <h1>
+        Building Scalable, Secure, and Reliable Backends for Modern Applications
+      </h1>
+
+     <a class="contact-btn" href="#contact"> Contact Me</a>
+    </section>
+
+    <!-- About Us Page -->
+    <section class="about" id="about">
+      <div class="about-content">
+        <h2>About Me</h2>
+        <p>
+          Hi! I’m <strong>Ismail Taha</strong>, a junior student at Misr International
+          University majoring in Software Engineering. I’m a passionate Backend
+          Engineer with a love for creating scalable, secure, and
+          high-performance server-side systems. With expertise in frameworks
+          like <strong>Django</strong>, <strong>Node.js</strong>, and
+          <strong>NestJS</strong>, as well as strong database management skills,
+          I specialize in powering modern applications with reliability and
+          efficiency.
+        </p>
+        <br />
+        <p>
+          Over the years, I’ve worked on diverse projects, from building
+          <strong> E-commerce platforms</strong> to crafting user-friendly
+          <strong>ticketing systems</strong>. My goal is to write clean,
+          maintainable code that solves real-world problems while delivering
+          seamless user experiences.
+        </p>
+        <br />
+        <p>
+          Currently, I’m looking for an
+          <strong>internship opportunity</strong> where I can contribute to
+          impactful projects, collaborate with skilled teams, and continue
+          growing my backend development expertise. If you’re looking for a
+          dedicated and motivated team player, let’s connect!
+        </p>
+      </div>
+      <div class="team-member">
+        <img src="images/myphoto.jpg" alt="Team Member" class="team-image" />
+      </div>
+    </section>
+
+    <!-- Work Section -->
+    <section id="work" class="animate-on-scroll">
+      <h2>My Projects</h2>
+
+      <!-- Project Item -->
+      <div class="project-item">
+        <img
+    src="images/ticketing-platform-photo.png"
+    alt="Finance App Screenshot"
+    class="project-image-full"
+    id="project-image-1"
+  /> 
+  <!-- Popup Modal for Video Demo -->
+        <div class="project-video-full" id="project-video-1" >
+          <span class="videoclose-btn" onclick="closeVideoDemo(1)">×</span>
+          <video preload="auto" controls>
+            <source src="video/ticktingPlatformVideo.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <div class="project-description">
+          <h3>Ticketing Platform</h3>
+          <p>
+            A collaborative project that provides a comprehensive ticketing solution, including event listings, seat selection, secure checkout, and an admin dashboard for event management and analytics.
+          </p>
+          
+         
+        </button>
+        <button class="demo-btn" onclick="showVideoDemo(1)">Show Demo</button>
+      </div>
+        </div>
+      
+
+      <!-- Project Item -->
+      <div class="project-item">
+        <img
+          src="images/eccomerce photo.png"
+          alt="Ecomerce Platform Screenshot"
+          class="project-image-full"
+          id="project-image-2"
+        />
+        <!-- Popup Modal for Video Demo -->
+        <div class="project-video-full" id="project-video-2" >
+          <span class="videoclose-btn" onclick="closeVideoDemo(2)">×</span>
+          <video preload="auto"controls>
+            <source src="video/eccomerce video.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <div class="project-description">
+          <h3>E-commerce Platform</h3>
+          <p>
+            An e-commerce website where users can browse products, add items to their cart, and complete purchases through a secure, integrated payment system(Paypal), designed to ensure a smooth shopping experience for both guests and registered users.
+          </p>
+         
+          <!-- <button -->
+            <!-- class="visit-btn" -->
+            <!-- onclick="window.open('link-to-crypto-platform', '_blank')" -->
+          <!-- > -->
+            <!-- Visit -->
+          <!-- </button> -->
+          
+          <button class="demo-btn" onclick="showVideoDemo(2)">Show Demo</button>
+        </div>
+      </div>
+      <div class="project-item">
+        <img
+          src="images/Ai workout Planner.png"
+          alt="AI-Powered Workout Planner Screenshot"
+          class="project-image-full"
+          id="project-image-3"
+        /> 
+        <!-- Popup Modal for Video Demo -->
+        <div class="project-video-full" id="project-video-3" >
+          <span class="videoclose-btn" onclick="closeVideoDemo(3)">×</span>
+          <video preload="auto"controls>
+            <source src="video/Ai WorkoutPlanner.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <div class="project-description">
+          <h3>AI-Powered Workout Planner</h3>
+          <p>
+            A cutting-edge web application that generates personalized workout plans using AI, integrated with YouTube for instructional exercise videos. It features a secure, responsive design with JWT-based authentication and a comprehensive admin dashboard for real-time analytics and user management.
+          </p>
+          
+          <button class="demo-btn" onclick="showVideoDemo(3)">Show Demo</button>
+        </div>
+      </div>
+      
+</section>
+      
+    <!-- FAQ Page -->
+    <section class="faq" id="faq">
+      <h2>Frequently Asked Questions</h2>
+
+      <div class="faq-item">
+        <h3 class="faq-question">
+          <span class="faq-icon">+</span> Q: What programming languages are you
+          proficient in?
+        </h3>
+        <p class="faq-answer">
+          A: I’m proficient in <strong>JavaScript</strong>,
+          <strong>TypeScript</strong>, <strong>Python</strong>,
+          <strong>PHP</strong>, <strong>Java</strong>, and <strong>C++</strong>.
+          My experience spans server-side development, database interactions,
+          and building scalable backend systems.
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <h3 class="faq-question">
+          <span class="faq-icon">+</span> Q: What backend frameworks have you
+          worked with?
+        </h3>
+        <p class="faq-answer">
+          A: I’ve worked with popular frameworks like <strong>Node.js</strong>,
+          <strong>Nest.js</strong>, <strong>Express.js</strong>, and
+          <strong>Django</strong>. Each framework has its strengths, and I
+          choose the one that best fits the project requirements.
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <h3 class="faq-question">
+          <span class="faq-icon">+</span> Q: What is your experience with
+          databases?
+        </h3>
+        <p class="faq-answer">
+          A: I’m experienced with relational databases like
+          <strong>PostgreSQL</strong>, <strong>MySQL</strong>, and
+          <strong>SQLite</strong>, as well as NoSQL databases like
+          <strong>MongoDB</strong>. I focus on designing efficient schemas,
+          writing optimized queries, and maintaining data consistency.
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <h3 class="faq-question">
+          <span class="faq-icon">+</span> Q: How do you handle challenges in
+          backend development?
+        </h3>
+        <p class="faq-answer">
+          A: I approach challenges with a structured mindset: identifying the
+          root cause, leveraging debugging tools, and researching solutions. I
+          also collaborate with team members to resolve issues efficiently.
+          Continuous learning ensures I stay updated on the latest technologies
+          and techniques.
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <h3 class="faq-question">
+          <span class="faq-icon">+</span> Q: How do you ensure backend security?
+        </h3>
+        <p class="faq-answer">
+          A: I implement best practices like encrypting sensitive data, securing
+          API endpoints with authentication and authorization mechanisms (e.g.,
+          JWT) and input validation to prevent injection attacks.
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <h3 class="faq-question">
+          <span class="faq-icon">+</span> Q: How do you stay updated on backend
+          technologies and practices?
+        </h3>
+        <p class="faq-answer">
+          A: I regularly follow blogs, read documentation, and participate in
+          developer communities on platforms like GitHub and LinkedIn. I also
+          experiment with new tools and frameworks by working on personal
+          projects, ensuring I stay ahead of the curve in backend development.
+        </p>
+      </div>
+      <div class="faq-item">
+        <h3 class="faq-question">
+          <span class="faq-icon">+</span> Q: Do you have experience working in
+          an agile environment?
+        </h3>
+        <p class="faq-answer">
+          A: Yes, I’ve worked in agile environments where I participated in
+          sprint planning, stand-up meetings, and retrospectives. This
+          experience helped me improve my collaboration skills and deliver
+          features incrementally.
+        </p>
+      </div>
+    </section>
+   <!-- Contact Form Section -->
+   <section id="contact">
+    <h2>Contact Me</h2>
+  
+    <div class="contact-container">
+      <div class="contact-form">
+        <form id="contactForm" action="https://formsubmit.co/448099edb101b2642d5921d9c9ecb697" method="POST" onsubmit="return validateForm()">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" required placeholder="Your Name" />
+          <span id="nameError" class="error-message"></span>
+  
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required placeholder="Your Email" />
+          <span id="emailError" class="error-message"></span>
+  
+    
+  
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="5" required placeholder="Your Message"></textarea>
+          <span id="messageError" class="error-message"></span>
+  
+          <button type="submit" class="send-btn">Send Message</button>
+        </form>
+      </div>
+    </div>
+  
+    <div id="formAlert" class="alert" style="display:none;">
+      <span id="alertMessage"></span>
+    </div>
+  
+    <p>
+      Phone: +20 111 972 3244 | Email:
+      <a href="mailto:ismailahmedtaha1@gmail.com">ismailahmedtaha1@gmail.com</a>
+    </p>
+  </section>
+
+    <!-- Scroll to Top Button -->
+    <button class="scroll-to-top" onclick="scrollToTop()">
+      <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <!-- Footer -->
+    <footer>
+      <p>© 2024 Ismail Taha. All rights reserved.</p>
+    </footer>
+
+    <script>
+      function validateForm() {
+        var name = document.getElementById('name').value;
+        var email = document.getElementById('email').value;
+        var message = document.getElementById('message').value;
+        
+    
+        var formIsValid = true;
+        var alertMessage = '';
+    
+        // Clear previous error messages and styles
+        document.querySelectorAll('.error-message').forEach(function(element) {
+          element.textContent = '';
+        });
+        document.querySelectorAll('.error').forEach(function(element) {
+          element.classList.remove('error');
+        });
+    
+        // Validate Name: Min 3 characters
+    if (name === "") {
+      document.getElementById('name').classList.add('error');
+      document.getElementById('nameError').textContent = "Name is required.";
+      formIsValid = false;
+    } else if (name.length < 3) {
+      document.getElementById('name').classList.add('error');
+      document.getElementById('nameError').textContent = "Name must be at least 3 characters.";
+      formIsValid = false;
+    }
+    
+        if (email === "") {
+          document.getElementById('email').classList.add('error');
+          document.getElementById('emailError').textContent = "Email is required.";
+          formIsValid = false;
+        }
+    
+        if (message === "") {
+          document.getElementById('message').classList.add('error');
+          document.getElementById('messageError').textContent = "Message is required.";
+          formIsValid = false;
+        }
+    
+       
+    
+        // Display alert if validation fails
+        if (!formIsValid) {
+         
+          return false;
+        }
+        showAlert("Email Sent Successfully");
+        return true;
+      }
+    
+      // Show alert message
+      function showAlert(message) {
+        var alertBox = document.getElementById('formAlert');
+        var alertMessage = document.getElementById('alertMessage');
+        alertMessage.textContent = message;
+        alertBox.style.display = 'block';
+      }
+    
+      document
+        .querySelector(".nav-toggle")
+        .addEventListener("click", function () {
+          document.querySelector("nav").classList.toggle("active");
+        });
+
+        function showVideoDemo(projectId) {
+          // Hide the project image and show the video for the specific project
+          var projectImage = document.getElementById("project-image-" + projectId);
+          var projectVideo = document.getElementById("project-video-" + projectId);
+          
+          projectImage.style.display = "none";
+          projectVideo.style.display = "block";
+        }
+        
+        function closeVideoDemo(projectId) {
+          // Show the project image and hide the video for the specific project
+          var projectImage = document.getElementById("project-image-" + projectId);
+          var projectVideo = document.getElementById("project-video-" + projectId);
+          
+          projectImage.style.display = "block";
+          projectVideo.style.display = "none";
+        }
+
+// Close the modal if the user clicks outside of the modal
+window.onclick = function(event) {
+  var modal = document.getElementById("videoModal");
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+      // JavaScript for handling scroll-triggered animations
+      document.addEventListener("DOMContentLoaded", function () {
+        // Create the observer
+        const observer = new IntersectionObserver(
+          (entries, observer) => {
+            entries.forEach((entry) => {
+              // Check if the element is in the viewport
+              if (entry.isIntersecting) {
+                // Add the animation class
+                entry.target.classList.add("fadeInUp");
+                // Unobserve the element after it has been animated
+                observer.unobserve(entry.target);
+              }
+            });
+          },
+          {
+            threshold: 0.1, // Trigger when 10% of the element is visible
+          }
+        );
+
+        // Target all elements with the animate-on-scroll class
+        document.querySelectorAll(".animate-on-scroll").forEach((element) => {
+          observer.observe(element);
+        });
+      });
+      // Scroll to Top Function
+      function scrollToTop() {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }
+
+      // Show the button when scrolling down
+      window.onscroll = function () {
+        const scrollButton = document.querySelector(".scroll-to-top");
+        if (
+          document.body.scrollTop > 100 ||
+          document.documentElement.scrollTop > 100
+        ) {
+          scrollButton.style.display = "block";
+        } else {
+          scrollButton.style.display = "none";
+        }
+      };
+
+      document.querySelectorAll(".faq-question").forEach((question) => {
+        question.addEventListener("click", () => {
+          const faqItem = question.parentElement;
+          faqItem.classList.toggle("active");
+        });
+      });
+
+    </script>
+   
+  </body>
+</html>
