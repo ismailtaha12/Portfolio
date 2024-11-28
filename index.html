@@ -9,6 +9,8 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
       crossorigin="anonymous"
     />
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@2.0.8/dist/lottie-player.js"></script>
+
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
@@ -163,10 +165,6 @@
           </div>
         </div>
       </div>
-
-      <div class="background-image">
-        <img src="images/section.svg" alt="Background Image" />
-      </div>
     </section>
 
     <!-- About Us Page -->
@@ -187,9 +185,43 @@
         <img src="images/myphoto.jpg" alt="Team Member" class="team-image" />
       </div>
     </section>
+    <hr class="glowing-line" />
+
+    <div class="experience-section">
+      <h2 class="experience-header">Experiences</h2>
+      <div class="experience-content">
+        <!-- Left illustration -->
+        <div class="illustration">
+          <lottie-player
+            src="https://lottie.host/741c6291-e41e-456b-b562-c6dfee4efa73/tWJyvtksvM.json"
+            background="##FFFFFF"
+            speed="1"
+            style="width: 600px; height: 500px"
+            loop
+            autoplay
+            direction="1"
+            mode="normal"
+          ></lottie-player>
+        </div>
+        <!-- Right experience cards -->
+        <div class="experience-cards">
+          <div class="experience-card">
+            <h3>BACKEND Developer INTERN</h3>
+            <p><span>(August 2024 - Present)</span></p>
+            <p>Cairo, Egypt</p>
+          </div>
+          <div class="experience-card">
+            <h3>SELF EMPLOYED</h3>
+            <p><span>(May 2024 - Present)</span></p>
+            <p>Code and build something every day.</p>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <div class="skills-section">
-      <h2 class="skills-header">My Skills</h2>
+      <h2 class="experience-header">Skills</h2>
+
       <!-- Header added here -->
       <div class="skills-slider">
         <div class="slider-track">
@@ -235,7 +267,7 @@
 
     <!-- Work Section -->
     <section id="work" class="animate-on-scroll">
-      <h2>My Projects</h2>
+      <h2 class="experience-header">Projects</h2>
 
       <div class="projects">
         <div class="project-item">
@@ -322,7 +354,7 @@
 
     <!-- FAQ Page -->
     <section class="faq" id="faq">
-      <h2>Frequently Asked Questions</h2>
+      <h2 class="experience-header">Frequently Asked Questions</h2>
 
       <div class="faq-item">
         <h3 class="faq-question">
@@ -409,15 +441,14 @@
         </h3>
         <p class="faq-answer">
           A: Yes, I’ve worked in agile environments where I participated in
-          sprint planning, stand-up meetings, and retrospectives. This
-          experience helped me improve my collaboration skills and deliver
-          features incrementally.
+          stand-up meetings. This experience helped me improve my collaboration
+          skills.
         </p>
       </div>
     </section>
     <!-- Contact Form Section -->
     <section id="contact">
-      <h2>Contact Me</h2>
+      <h2 class="experience-header">Contact Me</h2>
 
       <div class="contact-container">
         <div class="contact-form">

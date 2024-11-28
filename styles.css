@@ -534,13 +534,6 @@ code {
   background-color: #f9f9f9; /* Light background for contrast */
 }
 
-#work h2 {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
-  /* Increased font size for emphasis */
-  color: #333;
-  font-weight: 600;
-}
 .projects {
   display: flex;
   justify-content: center;
@@ -599,6 +592,8 @@ code {
 }
 /* Project Description */
 .project-description {
+  margin-bottom: 20px; /* Adds space below the text */
+
   padding: 2rem 1.5rem;
   text-align: left;
 }
@@ -896,12 +891,13 @@ footer {
   z-index: 2;
   margin-right: 20%;
   flex: 1; /* Takes up remaining space */
-  max-width: 400px; /* Ensures image doesn't grow too wide */
+  max-width: 400px;
+  min-width: 300px; /* Ensures image doesn't grow too wide */
 }
 
 .team-image {
   width: 100%;
-  height: auto;
+  height: 100%;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
@@ -942,6 +938,180 @@ footer {
   }
 }
 
+.experience-section {
+  position: relative;
+  padding: 10px 10px;
+  color: #ffffff;
+  font-family: "Poppins", sans-serif;
+  text-align: center;
+
+  /* Adding SVG Background */ /* Adding SVG Background */
+  background: url("images/section.svg");
+  background-size: cover; /* Makes the SVG cover the entire section */
+  background-position: center; /* Centers the SVG */
+  background-repeat: no-repeat;
+}
+
+.experience-header {
+  font-size: 3rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 40px;
+  letter-spacing: 2px;
+  color: #000000;
+  position: relative;
+}
+
+.experience-header::after {
+  content: "";
+  display: block;
+  width: 100px;
+  height: 3px;
+  background: #00ff99;
+  margin: 10px auto 0;
+}
+
+.experience-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: nowrap; /* Prevent wrapping */
+}
+
+.illustration {
+  flex: 1; /* Take up equal space */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 30%; /* Prevent it from getting too large */
+}
+
+.illustration lottie-player {
+  width: 100%;
+  max-width: 700px;
+  height: auto;
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.experience-cards {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 600px;
+}
+
+.experience-card {
+  background: linear-gradient(135deg, #4a2dbf, #8a48e7);
+  padding: 13px;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5),
+    inset 0 0 5px rgba(255, 255, 255, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+  text-align: left;
+  position: relative;
+  overflow: hidden;
+}
+
+.experience-card::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.2),
+    transparent 60%
+  );
+  opacity: 0;
+  transform: rotate(45deg);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  pointer-events: none;
+}
+
+.experience-card:hover::before {
+  opacity: 1;
+  transform: rotate(0deg);
+}
+
+.experience-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5),
+    inset 0 0 10px rgba(255, 255, 255, 0.3);
+  background: linear-gradient(135deg, #5c38d1, #a659ff);
+}
+
+.experience-card h3 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+.experience-card span {
+  display: inline-block;
+  background: #00ff99;
+  padding: 5px 10px;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 0.9rem;
+  color: #2b2b2b;
+  margin-bottom: 10px;
+}
+
+.experience-card p {
+  margin: 10px 0;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #dcdcdc;
+}
+
+.experience-card:hover h3 {
+  color: #00ff99;
+  text-shadow: 0 0 5px rgba(0, 255, 153, 0.5);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .experience-content {
+    flex-wrap: wrap; /* Allow wrapping for smaller screens */
+  }
+
+  .illustration,
+  .experience-cards {
+    max-width: 100%;
+    flex: unset;
+  }
+  .illustration {
+    height: 150px;
+  }
+}
+
+@media (max-width: 768px) {
+  .experience-header {
+    font-size: 2.5rem;
+  }
+
+  .experience-card h3 {
+    font-size: 1.6rem;
+  }
+}
+
 /* FAQ Section */
 .faq {
   background-color: #f9f9f9; /* Light background */
@@ -951,8 +1121,6 @@ footer {
 .faq h2 {
   text-align: center;
   margin-bottom: 40px;
-  font-size: 2.5rem; /* Increased font size for emphasis */
-  color: #333; /* Darker color for headings */
 }
 
 .faq-item {
@@ -1016,17 +1184,7 @@ footer {
   }
 }
 /* Header Styling */
-.skills-header {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
-  color: #333;
-  font-weight: 600;
 
-  /* Matches the theme color */
-  /* Adds spacing below the header */
-
-  letter-spacing: 2px; /* Adds some letter spacing for a cleaner look */
-}
 .skills-section {
   text-align: center; /* Center the content */
   /* Adds space above */
@@ -1133,5 +1291,24 @@ footer {
   .skill {
     min-width: 60px; /* Adjusted for smaller screens */
     font-size: 13px; /* Smaller font size */
+  }
+}
+hr.glowing-line {
+  border: none; /* Remove default border */
+  height: 3px; /* Line thickness */
+  background: linear-gradient(
+    90deg,
+    transparent,
+    #6f42c1,
+    transparent
+  ); /* Purple gradient */
+  position: relative;
+  margin: -1px 60px; /* Spacing around the line */
+  overflow: hidden;
+}
+@media (max-width: 768px) {
+  hr.glowing-line {
+    height: 2.5px;
+    margin: -1px 15px; /* Spacing around the line */
   }
 }
